@@ -1,14 +1,22 @@
 import "./style.css";
+import getWeather from "./getWeather";
+import getUI from "./getUI";
 
-const markup = `
-<h1>Webpack + Babel + ESLint + Prettier</h1>
-`;
+getUI()
+  .getButton()
+  .addEventListener("click", () => {
+    let info = "";
+    getWeather(getUI().getLocation())
+      .catch((error) => console.log(error))
+      .then((forecast) => {
+        forecast.forecast.forecastday.map((day) => {
+          console.log(day);
 
-const h1 = new DOMParser()
-  .parseFromString(markup, "text/html")
-  .querySelector("h1");
+          info += JSON.stringify(day);
 
-document.body.appendChild(h1);
+          return 0;
+        });
 
-const cat = [1, 2, 3, 4];
-console.log(cat);
+        getUI().getForecastContainer().textContent = info;
+      });
+  });
