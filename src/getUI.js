@@ -1,10 +1,22 @@
 export default function getUI() {
-  const location = document.getElementById("location");
-  const weatherButton = document.getElementById("location-btn");
-  const weatherContainer = document.querySelector(".forecast");
-  const getLocation = () => location.value;
-  const getButton = () => weatherButton;
-  const getForecastContainer = () => weatherContainer;
+  const getLocation = () => document.getElementById("location").value; // Doesn't return a Node, but it's VALUE
+  const getButton = () => document.getElementById("location-btn");
+  const getWeatherContainer = () =>
+    document.querySelector(".weather.container");
+  const getHeader = () => document.querySelector(".header");
+  const getImage = () => document.getElementById("weather-icon");
+  const getTempNow = () => document.getElementById("temp-now");
+  const getTempMax = () => document.getElementById("temp-max");
+  const getTempMin = () => document.getElementById("temp-min");
 
-  return { getLocation, getButton, getForecastContainer };
+  return {
+    getLocation,
+    getButton,
+    getWeatherContainer,
+    getHeader,
+    getImage,
+    getTempNow,
+    getTempMax,
+    getTempMin,
+  };
 }
