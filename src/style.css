@@ -106,3 +106,10 @@ input[type="text"]:focus {
 .hidden {
   visibility: hidden;
 }
+.highlight {
+  background-color: rgba(50, 50, 0, 0.5);
+}
+
+.highlight:hover {
+  background-color: rgba(70, 60, 25, 0.6);
+}
