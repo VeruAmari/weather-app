@@ -5,7 +5,7 @@ export async function getWeather(input) {
     { mode: "cors" },
   );
   const processed = await weather.json();
-  console.log(processed);
+  // console.log(processed);
   return processed;
 }
 

@@ -1,19 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 :root {
-  color-scheme: light dark;
+  color-scheme: dark;
+  font-family: Arial, Helvetica, sans-serif;
+  --radius: 7px;
 }
 
+body {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(https://ipfs.pixura.io/ipfs/QmNgJzaXM2vKTNHqy9krsWrgXfd8QTQEY3wKUBx7PUqLtT/206Ani.gif);
+  background-size: cover;
+  box-sizing: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+}
+.body.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  padding: 1rem;
+  gap: 1rem;
+}
+.body.container > .header {
+  padding: 0.5rem;
+  border-radius: var(--radius);
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+.form {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  padding: 1ex;
+  border-radius: var(--radius);
+}
+.form:hover {
+  background-color: rgba(50, 50, 50, 0.2);
+}
+input[type="text"],
+button {
+  padding: 1ex;
+  border: 0;
+}
+input[type="text"]:focus {
+  outline: 0;
+}
+#location-btn {
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+#location {
+  border-top-left-radius: var(--radius);
+}
+#current-display {
+  border-bottom-left-radius: var(--radius);
+}
+.location.label {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
 .temperatures {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
 }
+.forecast {
+  border-radius: var(--radius);
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  padding-top: 0.5rem;
+  display: grid;
+  gap: 0.5rem;
+}
+.forecast:hover {
+  background-color: rgba(50, 50, 50, 0.2);
+}
 .weather.container {
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+
+  padding: 1rem;
+  padding-right: 3rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  background-color: rgba(180, 180, 180, 0.4);
-  border-radius: 7px;
-  outline: white solid 1px;
+  border-radius: var(--radius);
   max-width: 30rem;
 }
 .hidden {
