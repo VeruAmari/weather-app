@@ -61,7 +61,9 @@ function displayWeather() {
             : `Now ${day.hour[currentTime].temp_f}°F`;
         card.getHeader().textContent = `${today}`;
         card.getImage().setAttribute("src", `${day.day.condition.icon}`);
-
+        if (today === "Today") {
+          card.getWeatherContainer().classList.add("highlight");
+        }
         document
           .querySelector(".body.container")
           .appendChild(card.getWeatherContainer());
