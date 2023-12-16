@@ -31,9 +31,9 @@ export default function UI() {
     const tempNow = document.createElement("span");
     tempNow.classList.add("temp", "now");
 
+    temperatures.appendChild(tempNow);
     temperatures.appendChild(tempMax);
     temperatures.appendChild(tempMin);
-    temperatures.appendChild(tempNow);
 
     const getWeatherContainer = () => forecast;
     const getHeader = () => header;
