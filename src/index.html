@@ -6,33 +6,19 @@
     <title>Weather App</title>
   </head>
   <body>
-    <header>
-      <form class="form" id="get-weather">
-        <label for="location" class="location label">Location</label>
-        <input type="text" name="location" id="location" />
-        <button type="submit" id="location-btn">Find Weather</button>
-        <button type="button" id="current-display">
-          Temperatures in °<span id="temperature-format">C</span>
-        </button>
-      </form>
-    </header>
-    <div class="body container">
+    <form class="form" id="get-weather">
+      <label for="location" class="location label">Location</label>
+      <input type="text" name="location" id="location" />
+      <button type="submit" id="location-btn">Find Weather</button>
+      <button type="button" id="current-display">
+        Temperatures in °<span id="temperature-format">C</span>
+      </button>
+    </form>
+    <div class="outer container">
       <div class="header" id="header">
         Weather in <span class="location" id="changing-location">London</span>
       </div>
-
-      <!--
-      <div class="forecast">
-        <div class="weather container">
-          <img src="" alt="weather" id="weather-icon" />
-          <div class="temperatures">
-            <span class="temp max" id="temp-max"></span>
-            <span class="temp min" id="temp-min"></span>
-            <span class="temp now" id="temp-now"> </span>
-          </div>
-        </div>
-      </div>
--->
+      <div class="body container"></div>
     </div>
     <footer class="footer"></footer>
   </body>

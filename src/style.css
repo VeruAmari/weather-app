@@ -10,6 +10,7 @@
 
 body {
   display: grid;
+  padding: calc(0.5rem + 5vw);
   width: 100vw;
   height: 100vh;
   background-image: url(https://ipfs.pixura.io/ipfs/QmNgJzaXM2vKTNHqy9krsWrgXfd8QTQEY3wKUBx7PUqLtT/206Ani.gif);
@@ -19,18 +20,17 @@ body {
   background-repeat: no-repeat;
   align-items: center;
   align-content: center;
-  justify-content: center;
-  justify-items: center;
 }
 .body.container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto 1fr;
-  padding: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: 1fr;
   gap: 1rem;
 }
-.body.container > .header {
+.outer.container > .header {
   padding: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   border-radius: var(--radius);
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(5px);
@@ -45,6 +45,8 @@ body {
   backdrop-filter: blur(5px);
   padding: 1ex;
   border-radius: var(--radius);
+  max-width: 30rem;
+  justify-self: center;
 }
 .form:hover {
   background-color: rgba(50, 50, 50, 0.2);
@@ -101,7 +103,6 @@ input[type="text"]:focus {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   border-radius: var(--radius);
-  max-width: 30rem;
 }
 .hidden {
   visibility: hidden;
