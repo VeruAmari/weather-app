@@ -12,18 +12,21 @@
 
 body {
   display: grid;
-  padding: calc(0.5rem + 5vw);
-  width: 100vw;
-  height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  padding: 3vw;
+  min-width: 100vw;
+  min-height: 100vh;
   background-image: url(https://ipfs.pixura.io/ipfs/QmNgJzaXM2vKTNHqy9krsWrgXfd8QTQEY3wKUBx7PUqLtT/206Ani.gif);
   background-size: cover;
   box-sizing: border-box;
   background-position: center;
-  background-repeat: no-repeat;
-  align-items: center;
+  align-items: start;
   align-content: center;
+
+  overflow-y: scroll;
 }
 .body.container {
+  overflow-y: scroll;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-template-rows: 1fr;
@@ -86,10 +89,17 @@ input[type="text"]:focus {
   gap: 0.5rem;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: start;
 }
 .temp.now {
   font-weight: bolder;
   color: antiquewhite;
+}
+.temp {
+  display: grid;
+  align-items: center;
+  justify-items: start;
 }
 .forecast {
   border-radius: var(--radius);
@@ -103,13 +113,15 @@ input[type="text"]:focus {
   background-color: rgba(50, 50, 50, 0.2);
 }
 .weather.container {
+  display: grid;
+  align-items: center;
+  justify-content: start;
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(5px);
 
   padding: 1rem;
-  padding-right: 3rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto 1fr;
   grid-template-rows: 1fr;
   border-radius: var(--radius);
 }
